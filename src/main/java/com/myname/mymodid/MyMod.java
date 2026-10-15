@@ -1,6 +1,9 @@
 package com.myname.mymodid;
 
+import com.myname.mymodid.commands.GoForward;
 import com.myname.mymodid.commands.TellPos;
+import com.myname.mymodid.tickevent.GlobalTickEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,6 +34,7 @@ public class MyMod {
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes." (Remove if not needed)
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        FMLCommonHandler.instance().bus().register(new GlobalTickEvent());
     }
 
     @Mod.EventHandler
@@ -44,5 +48,6 @@ public class MyMod {
     public void serverStarting(FMLServerStartingEvent event) {
         proxy.serverStarting(event);
         event.registerServerCommand(new TellPos());
+        event.registerServerCommand(new GoForward());
     }
 }
