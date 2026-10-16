@@ -1,17 +1,18 @@
 package com.myname.mymodid.commands;
 
-import com.myname.mymodid.UnObfuscated;
-import com.myname.mymodid.tickevent.GoForwardTick;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayerMP;
 
-public class GoForward extends net.minecraft.command.CommandBase{
+import com.myname.mymodid.ModUtil;
+import com.myname.mymodid.tickevent.GoForwardTick;
 
-    public static final String commandName = "GoForward";
-    public static final String commandUsage = "/GoForward <int block>";
+public class GoForward extends net.minecraft.command.CommandBase {
 
-    public GoForward(){}
+    private static final String commandName = "GoForward";
+    private static final String commandUsage = "/GoForward <int block>";
+
+    public GoForward() {}
 
     @Override
     public String getCommandName() {
@@ -25,23 +26,22 @@ public class GoForward extends net.minecraft.command.CommandBase{
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) {
-        if (args.length == 0){
+        if (args.length == 0) {
             throw new WrongUsageException("this command needs an argument " + commandUsage);
         }
         int blocks;
         try {
             blocks = Integer.parseInt(args[0]);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new WrongUsageException("the argument must be a positive integer " + commandUsage);
         }
-        if (blocks <= 0){
+        if (blocks <= 0) {
             throw new WrongUsageException("the argument must be a strictly positive integer " + commandUsage);
         }
         String senderName = sender.getCommandSenderName();
-        EntityPlayerMP player =  UnObfuscated.getPlayerByUsername(senderName);
+        EntityPlayerMP player = ModUtil.getPlayerByUsername(senderName);
         if (player != null) {
-            GoForwardTick.addPlayerMovement(senderName, (int) Math.round(blocks/0.215));
+            GoForwardTick.addPlayerMovement(senderName, (int) Math.round(blocks / 0.215));
         }
 
     }
