@@ -10,5 +10,8 @@ public class GlobalTickEvent {
         if (event.phase == TickEvent.Phase.START) {
             GoForwardTick.tickEvent();
         }
+        if (event.phase == TickEvent.Phase.END) {
+            GalliumTick.tick();
+        }
     }
 }

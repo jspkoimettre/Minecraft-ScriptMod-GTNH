@@ -1,9 +1,5 @@
 package com.myname.mymodid.commands;
 
-import com.myname.mymodid.ModUtil;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -14,11 +10,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldManager;
+
+import com.myname.mymodid.ModUtil;
 
 public class OpenAndReadChest extends CommandBase {
 
-    private static  final String commandName = "OpenAndReadChest";
+    private static final String commandName = "OpenAndReadChest";
     private static final String commandUsage = "/OpenAndReadChest";
 
     public OpenAndReadChest() {}
@@ -32,9 +29,6 @@ public class OpenAndReadChest extends CommandBase {
     public String getCommandUsage(ICommandSender sender) {
         return commandUsage;
     }
-
-
-
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) {
@@ -55,7 +49,7 @@ public class OpenAndReadChest extends CommandBase {
 
             TileEntity tileEntity = world.getTileEntity(blockCoordX, blockCoordY, blockCoordZ);
 
-            if(!(tileEntity instanceof IInventory)){
+            if (!(tileEntity instanceof IInventory)) {
                 throw new CommandException("block is not a container");
             }
             float blockHitVecX = (float) (blockHitVec.xCoord - blockCoordX);
@@ -64,9 +58,24 @@ public class OpenAndReadChest extends CommandBase {
 
             ItemInWorldManager itemInWorldManager = player.theItemInWorldManager;
 
-            itemInWorldManager.activateBlockOrUseItem(player, world, player.getCurrentEquippedItem(), blockCoordX, blockCoordY, blockCoordZ, blockSide, blockHitVecX, blockHitVecY, blockHitVecZ);
+            itemInWorldManager.activateBlockOrUseItem(
+                player,
+                world,
+                player.getCurrentEquippedItem(),
+                blockCoordX,
+                blockCoordY,
+                blockCoordZ,
+                blockSide,
+                blockHitVecX,
+                blockHitVecY,
+                blockHitVecZ);
 
-            player.playerNetServerHandler.sendPacket(new net.minecraft.network.play.server.S23PacketBlockChange(blockCoordX, blockCoordY, blockCoordZ, world));
+            player.playerNetServerHandler.sendPacket(
+                new net.minecraft.network.play.server.S23PacketBlockChange(
+                    blockCoordX,
+                    blockCoordY,
+                    blockCoordZ,
+                    world));
 
             sender.addChatMessage(ModUtil.parseInventory((IInventory) tileEntity));
         }

@@ -1,10 +1,11 @@
 package com.myname.mymodid;
 
-import com.myname.mymodid.commands.OpenAndReadChest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.myname.mymodid.commands.Gallium;
 import com.myname.mymodid.commands.GoForward;
+import com.myname.mymodid.commands.OpenAndReadChest;
 import com.myname.mymodid.commands.TellPos;
 import com.myname.mymodid.tickevent.GlobalTickEvent;
 
@@ -54,5 +55,6 @@ public class MyMod {
         event.registerServerCommand(new TellPos());
         event.registerServerCommand(new GoForward());
         event.registerServerCommand((new OpenAndReadChest()));
+        event.registerServerCommand(new Gallium());
     }
 }
