@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.kant1.kant1smod;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.IInventory;

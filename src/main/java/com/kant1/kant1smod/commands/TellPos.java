@@ -1,11 +1,11 @@
-package com.myname.mymodid.commands;
+package com.kant1.kant1smod.commands;
 
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentText;
 
-import com.myname.mymodid.ModUtil;
+import com.kant1.kant1smod.ModUtil;
 
 /**
  * send in sender chat the x y z position of the player

@@ -1,4 +1,4 @@
-package com.myname.mymodid.tickevent;
+package com.kant1.kant1smod.tickevent;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -11,7 +11,15 @@ public class GlobalTickEvent {
             GoForwardTick.tickEvent();
         }
         if (event.phase == TickEvent.Phase.END) {
-            GalliumTick.tick();
+            // GalliumTick.tick();
+
+        }
+    }
+
+    @SubscribeEvent
+    public void onTickClient(TickEvent.ClientTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            GalliumTickClient.tick();
         }
     }
 }

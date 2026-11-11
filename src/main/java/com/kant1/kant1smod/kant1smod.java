@@ -1,13 +1,12 @@
-package com.myname.mymodid;
+package com.kant1.kant1smod;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.myname.mymodid.commands.Gallium;
-import com.myname.mymodid.commands.GoForward;
-import com.myname.mymodid.commands.OpenAndReadChest;
-import com.myname.mymodid.commands.TellPos;
-import com.myname.mymodid.tickevent.GlobalTickEvent;
+import com.kant1.kant1smod.commands.GoForward;
+import com.kant1.kant1smod.commands.OpenAndReadChest;
+import com.kant1.kant1smod.commands.TellPos;
+import com.kant1.kant1smod.tickevent.GlobalTickEvent;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -17,13 +16,13 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = MyMod.MODID, version = Tags.VERSION, name = "MyMod", acceptedMinecraftVersions = "[1.7.10]")
-public class MyMod {
+@Mod(modid = kant1smod.MODID, version = Tags.VERSION, name = "Kant1's Mod", acceptedMinecraftVersions = "[1.7.10]")
+public class kant1smod {
 
-    public static final String MODID = "mymodid";
+    public static final String MODID = "Kant1's Mod";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "com.myname.mymodid.ClientProxy", serverSide = "com.myname.mymodid.CommonProxy")
+    @SidedProxy(clientSide = "com.kant1.kant1smod.ClientProxy", serverSide = "com.kant1.kant1smod.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
@@ -55,6 +54,7 @@ public class MyMod {
         event.registerServerCommand(new TellPos());
         event.registerServerCommand(new GoForward());
         event.registerServerCommand((new OpenAndReadChest()));
-        event.registerServerCommand(new Gallium());
+        // event.registerServerCommand(new Gallium());
+
     }
 }

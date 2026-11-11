@@ -1,4 +1,4 @@
-package com.myname.mymodid.tickevent;
+package com.kant1.kant1smod.tickevent;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.play.server.S09PacketHeldItemChange;

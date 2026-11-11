@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.kant1.kant1smod;
 
 import java.io.File;
 

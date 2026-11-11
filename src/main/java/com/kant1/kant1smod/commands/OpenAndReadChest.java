@@ -1,4 +1,4 @@
-package com.myname.mymodid.commands;
+package com.kant1.kant1smod.commands;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -11,7 +11,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-import com.myname.mymodid.ModUtil;
+import com.kant1.kant1smod.ModUtil;
 
 public class OpenAndReadChest extends CommandBase {
 

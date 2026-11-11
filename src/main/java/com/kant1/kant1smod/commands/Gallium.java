@@ -1,11 +1,11 @@
-package com.myname.mymodid.commands;
+package com.kant1.kant1smod.commands;
 
 import net.minecraft.command.ICommandSender;
 import net.minecraft.command.WrongUsageException;
 import net.minecraft.entity.player.EntityPlayerMP;
 
-import com.myname.mymodid.ModUtil;
-import com.myname.mymodid.tickevent.GalliumTick;
+import com.kant1.kant1smod.ModUtil;
+import com.kant1.kant1smod.tickevent.GalliumTick;
 
 public class Gallium extends net.minecraft.command.CommandBase {
 

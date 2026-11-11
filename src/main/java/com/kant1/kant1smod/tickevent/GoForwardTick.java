@@ -1,4 +1,4 @@
-package com.myname.mymodid.tickevent;
+package com.kant1.kant1smod.tickevent;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 
-import com.myname.mymodid.ModUtil;
+import com.kant1.kant1smod.ModUtil;
 
 public class GoForwardTick {
 
